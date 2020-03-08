@@ -1,6 +1,12 @@
-const MOGOOSE = require('mongoose');
+const mogoose = require('mongoose');
+const url = require('./../config/config.js').URL_MONGODB;
+const nameDb = require('./../config/config.js').NAME_MONGODB;
 
-MOGOOSE.connect('mongodb://localhost:27017/noderest', { useMongoClient: true });
-MOGOOSE.Promise = global.Promise;
+mogoose.connect(`${url}/${nameDb}`, {
+  useCreateIndex: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
-module.exports = MOGOOSE;
+mogoose.Promise = global.Promise;
+module.exports = mogoose;

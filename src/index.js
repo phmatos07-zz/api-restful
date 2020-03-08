@@ -1,11 +1,13 @@
-const EXPRESS = require('express');
-const BODY_PARSER = require('body-parser');
-const APP = EXPRESS();
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const port = require('./config/config.js').APP_PORT;
 
-APP.use(BODY_PARSER.json());
+// body-parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
-APP.use(BODY_PARSER.urlencoded({
-  extended: false
-}));
+require('./controllers/auth/auth.controller.js')(app);
 
-APP.listen(3000);
+app.listen(port);
+console.log(`Server OK ${port}`);
