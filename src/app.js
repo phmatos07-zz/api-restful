@@ -3,11 +3,11 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = require('./config/config.js').APP_PORT;
 
-// body-parser
+// BODY-PARSER
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-require('./controllers/auth/auth.controller.js')(app);
-
 app.listen(port);
-console.log(`Server OK ${port}`);
+console.info(`Server OK - Port: ${port}`);
+
+module.exports = app;

@@ -9,9 +9,9 @@
   "homepage": "https://github.com/phmatos07/api-restful#readme",
   "author": "Phelipe Matos - PHMATOS07",
   "license": "GPL-3.0",
-  "main": "src/index.js",
+  "main": "src/app.js",
   "scripts": {
-    "dev": "node src/index.js"
+    "dev": "node src/app.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
