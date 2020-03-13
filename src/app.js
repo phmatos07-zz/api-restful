@@ -1,13 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const app = express();
-const port = require('./config/config.js').APP_PORT;
+const userRoutes = require('./app/user/routes.js');
 
 // BODY-PARSER
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 
-app.listen(port);
-console.info(`Server OK - Port: ${port}`);
+// APP-USE ROUTES
+app.use('/', userRoutes);
 
 module.exports = app;
