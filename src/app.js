@@ -4,10 +4,10 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 // ROUTES
-const userRoutes = require('./app/user/routes.js');
+const userRoutes = require('./app/user/routes');
 
 // MIDDLEWARES
-const errorHandler = require('./middlewares/error-handler.middleware.js');
+const errorHandler = require('./middlewares/error-handler.middleware');
 
 // BODY-PARSER
 app.use(bodyParser.json());

@@ -1,6 +1,6 @@
 const mogoose = require('mongoose');
-const url = require('./config.js').URL_MONGODB;
-const nameDb = require('./config.js').NAME_MONGODB;
+const url = require('./config').URL_MONGODB;
+const nameDb = require('./config').NAME_MONGODB;
 
 mogoose.connect(`${url}/${nameDb}`, {
   useCreateIndex: true,
