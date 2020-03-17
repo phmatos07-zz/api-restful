@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
 const app = express();
 
@@ -13,6 +14,7 @@ const clientErrorHandlerMiddleware = require('./middlewares/client-error-handler
 // BODY-PARSER
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(helmet());
 app.use(cookieParser());
 
 // APP-USE ROUTES
