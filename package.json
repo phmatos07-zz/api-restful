@@ -12,6 +12,8 @@
   "main": "src/app.js",
   "scripts": {
     "dev": "node src/server.js",
+    "debug": "node --inspect src/server.js",
+    "debug:brk": "node --inspect-brk src/server.js",
     "lint": "./node_modules/.bin/eslint src"
   },
   "dependencies": {
