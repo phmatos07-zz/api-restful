@@ -1,17 +1,18 @@
+const typeErrorsEnum = require('./../models/enum/type-errors.enum');
+
 const clientErrorHandlerMiddleware = (err, req, res, next) => {
   try {
 
-    if (!req.xhr) {
-      next(err);
-      return;
+    if (err.typeError === typeErrorsEnum.XML_HTTP_REQUEST) {
+      throw err;
     }
-    throw new Error(err);
+    next(err);
 
-  } catch (catchError) {
+  } catch (error) {
 
-    console.error(catchError);
-    res.status(500);
-    res.send({ error: catchError });
+    console.error(error);
+    res.status(error.httpStatusCode);
+    res.send({ error });
   }
 };
 
