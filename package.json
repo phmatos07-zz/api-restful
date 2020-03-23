@@ -11,8 +11,9 @@
   "license": "GPL-3.0",
   "main": "src/app.js",
   "scripts": {
-    "dev": "node src/server.js",
-    "debug": "node --inspect src/server.js",
+    "test": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "debug": "nodemon --inspect src/server.js",
     "debug:brk": "node --inspect-brk src/server.js",
     "lint": "./node_modules/.bin/eslint src"
   },
@@ -25,6 +26,7 @@
     "mongoose": "^5.9.2"
   },
   "devDependencies": {
-    "eslint": "^6.8.0"
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.2"
   }
 }
