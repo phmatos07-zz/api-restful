@@ -2,7 +2,7 @@ const createObjectError = require('./../../../helpers/create-object-error/create
 const typeErrorsEnum = require('./../../../models/enum/type-errors.enum');
 const tesponsesStatusEnum = require('./../../../models/enum/responses-status.enum');
 
-const getUser = (req, res, next) => {
+const GetUserController = (req, res, next) => {
 
   try {
     // Em desenvolvimento
@@ -18,4 +18,4 @@ const getUser = (req, res, next) => {
   }
 };
 
-module.exports = getUser;
+module.exports = GetUserController;
