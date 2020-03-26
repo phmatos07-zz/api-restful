@@ -9,10 +9,9 @@ const clientErrorHandlerMiddleware = (err, req, res, next) => {
     next(err);
 
   } catch (error) {
-
     console.error(error);
     res.status(error.httpStatusCode);
-    res.send({ error });
+    res.send(error);
   }
 };
 
