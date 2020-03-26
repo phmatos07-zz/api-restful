@@ -1,5 +1,16 @@
 const app = require('./app');
-const port = require('./config/config').APP_PORT;
+const dotenv = require('dotenv').config();
+const normalizePortHelper = require('./helpers/normalize-port/normalize-port.helper');
 
-app.listen(port);
-console.info(`Server OK - Port: ${port}`);
+try {
+
+  if (dotenv.error) {
+    throw dotenv.error;
+  }
+  app.listen(normalizePortHelper(process.env.APP_PORT));
+  console.info(dotenv.parsed);
+  console.info(`SERVER OK - PORT: ${process.env.APP_PORT}`);
+
+} catch (error) {
+  console.error(error);
+}
